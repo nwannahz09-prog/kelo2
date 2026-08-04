@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kelo Cola — Back Kelo</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="site">
+  <div class="topbar">
+    <div class="brand">
+      <div class="mark"><span>K</span></div>
+      <div class="brand-name">KELO COLA</div>
+    </div>
+    <div class="navlinks">
+      <a href="#about">The Brand</a>
+      <a href="#stats">Backers</a>
+      <a href="#tiers">Back Kelo</a>
+      <a href="#honesty">Fine Print</a>
+    </div>
+    <button class="btn btn-ghost" onclick="openAuth('dash')">Backer dashboard →</button>
+  </div>
+
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Nationwide · Nigeria</span>
+      <h1 class="display">Own a <em>sip</em><br>of what's<br>already big.</h1>
+      <p class="lede">Kelo Cola is one of Nigeria's established independent cola brands. We open a limited number of backer slots to real people — not to raise money we need, but to bring backers along for what happens next.</p>
+      <div class="cta-row">
+        <button class="btn btn-primary" onclick="document.getElementById('tiers').scrollIntoView()">Become a backer</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('honesty').scrollIntoView()">What this actually is</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b id="statTotalBackers">—</b><span>Total backers</span></div>
+        <div class="stat"><b>4</b><span>Backer categories</span></div>
+        <div class="stat"><b>480+</b><span>Retail points</span></div>
+      </div>
+    </div>
+    <div class="gauge-wrap">
+      <svg id="bottle" width="180" height="340" viewBox="0 0 180 340">
+        <defs>
+          <clipPath id="bottleClip">
+            <path d="M70,10 h40 v40 c0,10 20,15 20,45 v210 c0,15 -12,25 -28,25 h-24 c-16,0 -28,-10 -28,-25 v-210 c0,-30 20,-35 20,-45 z"/>
+          </clipPath>
+        </defs>
+        <path d="M70,10 h40 v40 c0,10 20,15 20,45 v210 c0,15 -12,25 -28,25 h-24 c-16,0 -28,-10 -28,-25 v-210 c0,-30 20,-35 20,-45 z"
+              fill="none" stroke="var(--red)" stroke-width="2.5"/>
+        <g clip-path="url(#bottleClip)">
+          <rect class="fill-rect" x="0" y="60" width="180" height="340" fill="#C81E2C" fill-opacity="0.45"
+                style="transform:translateY(206px)"/>
+          <rect class="wave" x="0" y="272" width="360" height="20" fill="#C81E2C" fill-opacity="0.65"/>
+        </g>
+      </svg>
+      <div class="goal-pct" id="bottleCaption">LOADING BACKER COUNT…</div>
+      <div class="gauge-label">Tracks backer count,<br>not a fundraising target.</div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div>
+      <span class="eyebrow">The Brand</span>
+      <h2 class="display">Nigeria's<br>fastest-growing<br>independent cola.</h2>
+    </div>
+    <div class="about-copy">
+      <p>Kelo Cola is bottled and distributed across Nigeria, with a growing retail footprint and a loyal following. Backing Kelo isn't about funding something we need — it's about giving real people a stake in a brand that's already moving.</p>
+      <p>Backing Kelo doesn't buy you a seat on a board or a line in a share registry. It buys you a real stake in a real brand — tracked openly, with a real promise about what happens if it keeps growing.</p>
+      <div class="ingredient-row">
+        <span class="chip">Classic Cola</span>
+        <span class="chip">Zero Sugar</span>
+        <span class="chip">Cherry Cola</span>
+        <span class="chip">Ginger Cola</span>
+        <span class="chip">Bottled Nationwide</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section" id="stats">
+    <div class="stats-head">
+      <h2 class="display">Who's already<br>backing Kelo.</h2>
+      <span class="eyebrow" style="margin:0;">Backer count by category</span>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-num" id="catFirstSip">—</div>
+        <div class="cat-label">First Sip backers</div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num" id="catBottleBacker">—</div>
+        <div class="cat-label">Bottle Backer tier</div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num" id="catCrateFounder">—</div>
+        <div class="cat-label">Crate Founder tier</div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num" id="catDistributorsCircle">—</div>
+        <div class="cat-label">Distributor's Circle</div>
+      </div>
+    </div>
+    <div class="cat-total">
+      <div class="t"><b id="catTotal">—</b><span>Total backers</span></div>
+      <div class="t"><b>36 states</b><span>Backer spread</span></div>
+      <div class="t"><b>4</b><span>Active categories</span></div>
+    </div>
+  </section>
+
+  <section class="milestones" id="phases">
+    <div class="m-head">
+      <h2 class="display">Where Kelo is<br>headed next.</h2>
+      <span class="eyebrow" style="margin:0;">High-level, updated as it happens</span>
+    </div>
+    <div class="m-track">
+      <div class="m-item done">
+        <div class="m-dot"></div>
+        <div class="m-amt">REACHED</div>
+        <div class="m-title">National retail distribution</div>
+        <div class="m-desc">Kelo Cola is now stocked across major retail networks in multiple regions.</div>
+      </div>
+      <div class="m-item done">
+        <div class="m-dot"></div>
+        <div class="m-amt">REACHED</div>
+        <div class="m-title">Structured backer program launched</div>
+        <div class="m-desc">Opened backer categories to the public for the first time.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-dot"></div>
+        <div class="m-amt">NEXT</div>
+        <div class="m-title">Regional expansion, West Africa</div>
+        <div class="m-desc">Groundwork for distribution beyond Nigeria's borders.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-dot"></div>
+        <div class="m-amt">LONGER TERM</div>
+        <div class="m-title">Institutional & capital markets partnerships</div>
+        <div class="m-desc">Exploring structured partnerships with professional investors and trade desks.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tiers">
+    <span class="eyebrow">Back Kelo</span>
+    <h2 class="display" style="font-size:clamp(30px,4vw,48px);">Pick a backer category.</h2>
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-name">First Sip</div>
+        <div class="tier-price">₦5,000</div>
+        <div class="tier-shares">50 backer shares</div>
+        <ul class="tier-perks">
+          <li>Name on the backer wall</li>
+          <li>Backer dashboard access</li>
+        </ul>
+        <button class="btn btn-ghost-dark" data-tier="First Sip" onclick="openAuth('back', this.dataset.tier)">Back this tier</button>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Bottle Backer</div>
+        <div class="tier-price">₦20,000</div>
+        <div class="tier-shares">250 backer shares</div>
+        <ul class="tier-perks">
+          <li>Everything in First Sip</li>
+          <li>Chance to receive free bottles per run</li>
+          <li>Early look at new flavours</li>
+        </ul>
+        <button class="btn btn-ghost-dark" data-tier="Bottle Backer" onclick="openAuth('back', this.dataset.tier)">Back this tier</button>
+      </div>
+      <div class="tier-card hi">
+        <div class="tier-name">Crate Founder</div>
+        <div class="tier-price">₦50,000</div>
+        <div class="tier-shares">700 backer shares</div>
+        <ul class="tier-perks">
+          <li>Everything in Bottle Backer</li>
+          <li>Founder badge on dashboard</li>
+          <li>Opportunity to join select bottling events</li>
+        </ul>
+        <button class="btn btn-primary" data-tier="Crate Founder" onclick="openAuth('back', this.dataset.tier)">Back this tier</button>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Distributor's Circle</div>
+        <div class="tier-price">₦150,000</div>
+        <div class="tier-shares">150,000</div>
+        <ul class="tier-perks">
+          <li>Everything in Crate Founder</li>
+          <li>First look at future revenue-share terms, if offered</li>
+          <li>Chance at a quarterly 1:1 with the founder</li>
+        </ul>
+        <button class="btn btn-ghost-dark" data-tier="Distributor's Circle" onclick="openAuth('back', this.dataset.tier)">Back this tier</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="spotlights" id="spotlights">
+    <span class="eyebrow">Backer stories</span>
+    <h2 class="display" style="font-size:clamp(30px,4vw,48px);">Real stories, added as they come in.</h2>
+    <div class="spot-grid">
+      <div class="spot-card">
+        <div class="spot-tag">Placeholder</div>
+        <div class="spot-quote">"This space is reserved for a real backer's story — their category, how long they've backed Kelo, and their own words."</div>
+        <div class="spot-note">No story added yet. We don't fabricate testimonials or results.</div>
+      </div>
+      <div class="spot-card">
+        <div class="spot-tag">Placeholder</div>
+        <div class="spot-quote">"Once a backer agrees to share their experience publicly, it goes here with their real name and category."</div>
+        <div class="spot-note">No story added yet. We don't fabricate testimonials or results.</div>
+      </div>
+      <div class="spot-card">
+        <div class="spot-tag">Placeholder</div>
+        <div class="spot-quote">"Any figures shown here — duration backed, amounts, outcomes — will be real numbers a backer has consented to share."</div>
+        <div class="spot-note">No story added yet. We don't fabricate testimonials or results.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="honesty" id="honesty">
+    <div class="honesty-inner">
+      <h2 class="display">The fine<br>print, up<br>front.</h2>
+      <ul>
+        <li>Backer shares are <b>symbolic</b>. They are not stock, not legal equity, and don't register you as an owner of Kelo anywhere.</li>
+        <li>A future revenue-share is a <b>possible</b> arrangement, not an enforceable contract, unless and until it's formalized in writing with proper terms.</li>
+        <li>No financial return is guaranteed. Perks are chances and opportunities, not certainties — and neither is any future payout.</li>
+        <li>Backer and category numbers shown here are live from this prototype's own signups and are not audited by a third party.</li>
+        <li>If revenue-share terms are ever formalized, every backer will be told directly and given the actual agreement to read before anything changes.</li>
+        <li>Payments on this site are a <b>simulated demo</b>. No card is ever charged and no real payment gateway is contacted.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div>KELO COLA — Lagos, Nigeria.</div>
+    <div>This page is a prototype. No real payments are processed here.</div>
+  </footer>
+</div>
+
+<div id="dash">
+  <div class="dash-topbar">
+    <div>
+      <div class="who" id="dashName">Welcome back</div>
+      <div class="sub" id="dashSub">—</div>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn btn-ghost" onclick="showSite()">← Back to Kelo site</button>
+      <button class="btn btn-ghost" onclick="logout()">Log out</button>
+      <button class="btn btn-ghost" onclick="openWithdrawalModal()">Withdraw Earnings</button>
+    </div>
+  </div>
+
+  <div class="dash-body">
+
+    <div id="dashNoTier" class="card" style="grid-column:1/-1; display:none;">
+      <h3>YOU HAVEN'T BACKED A TIER YET</h3>
+      <p style="font-size:14px; line-height:1.7; color:rgba(18,18,18,0.75); margin-bottom:18px;">
+        Pick a backer category and this dashboard will fill in with your real shares, amount backed, and projection.
+      </p>
+      <button class="btn btn-primary" onclick="showSite(); document.getElementById('tiers').scrollIntoView();">Choose a tier</button>
+    </div>
+
+    <div id="dashHasTier" style="display:contents;">
+      <div class="card" style="grid-column:1/-1;">
+        <h3>YOUR TOTALS, ACROSS ALL BACKINGS</h3>
+        <div class="value-row" style="margin-top:6px;">
+          <div class="v"><b id="totShares">0</b><span>Total shares</span></div>
+          <div class="v"><b id="totAmount">₦0</b><span>Total amount backed</span></div>
+          <div class="v"><b id="totProjected7">₦0</b><span>Projected value, 7 days</span></div>
+          <div class="v"><b id="totProjected30">₦0</b><span>Projected value, 30 days</span></div>
+        </div>
+      </div>
+
+      <div class="backing-grid" id="backingGrid" style="grid-column:1/-1;"></div>
+
+      <div class="card">
+        <h3>WHAT HAPPENS NEXT</h3>
+        <p style="font-size:14px; line-height:1.7; color:rgba(18,18,18,0.75);">
+          If Kelo formalizes revenue-share terms, backers at your tier or above will see draft terms here first, before anything is signed. Until then, this dashboard tracks backer status only — it is not a payout.
+        </p>
+      </div>
+    </div>
+
+    <div class="disclaimer-box">
+      <b>Reminder:</b> everything on this dashboard — shares, "projected value," and growth bars — is illustrative. It reflects backer status and category progress only. It is not a real financial instrument, doesn't trade anywhere, and creates no legal claim on Kelo's revenue or assets unless and until a formal agreement is signed with you directly.
+    </div>
+  </div>
+</div>
+
+<!-- ================= SIGN UP MODAL ================= -->
+<div class="modal-overlay" id="signupOverlay">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeSignup()">✕</button>
+    <h3>Create your backer account</h3>
+    <div class="sub-copy">You'll need an account before backing Kelo or viewing the dashboard.</div>
+    <div class="form-error" id="signupError"></div>
+    <form id="signupForm" onsubmit="submitSignup(event)">
+      <div class="field">
+        <label>Full name</label>
+        <input type="text" id="signupName" placeholder="e.g. Ada Obi" required>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="signupEmail" placeholder="you@example.com" required>
+      </div>
+      <div class="field">
+        <label>Phone number</label>
+        <input type="tel" id="signupPhone" placeholder="080..." required>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="signupPassword" placeholder="At least 6 characters" minlength="6" required>
+      </div>
+      <button class="btn btn-primary" type="submit" id="signupSubmitBtn">Create account & continue</button>
+    </form>
+    <div class="modal-fine">Already backing Kelo? <a href="#" onclick="switchToLogin(); return false;">Log in instead</a></div>
+  </div>
+</div>
+
+<!-- ================= LOG IN MODAL ================= -->
+<div class="modal-overlay" id="loginOverlay">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeLogin()">✕</button>
+    <h3>Log in to Kelo</h3>
+    <div class="sub-copy">Enter your details to access your backer dashboard.</div>
+    <div class="form-error" id="loginError"></div>
+    <form id="loginForm" onsubmit="submitLogin(event)">
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="loginEmail" placeholder="you@example.com" required>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="Your password" required>
+      </div>
+      <button class="btn btn-primary" type="submit" id="loginSubmitBtn">Log in & continue</button>
+    </form>
+    <div class="modal-fine">New here? <a href="#" onclick="switchToSignup(); return false;">Create an account</a></div>
+  </div>
+</div>
+
+<!-- ================= PAYMENT MODAL ================= -->
+<div class="modal-overlay" id="paymentOverlay">
+  <div class="modal-box pay-box">
+    <button class="modal-close" onclick="closePayment()">✕</button>
+
+    <div class="pay-badge">
+      <span class="pay-dot"></span> SIMULATED CHECKOUT · NO REAL CHARGE
+    </div>
+    <h3 id="paySummaryTier">Back a tier</h3>
+    <div class="sub-copy" id="paySummarySub">—</div>
+
+    <div class="pay-summary" id="paySummaryBox"></div>
+
+    <div id="payFormStage">
+      <div class="form-error" id="payError"></div>
+      <form id="paymentForm" onsubmit="submitPayment(event)">
+        <div class="field">
+          <label>Name on card</label>
+          <input type="text" id="payName" placeholder="e.g. Ada Obi" required>
+        </div>
+        <div class="field">
+          <label>Card number</label>
+          <input type="text" id="payCardNumber" placeholder="4242 4242 4242 4242" inputmode="numeric" maxlength="19" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Expiry</label>
+            <input type="text" id="payExpiry" placeholder="MM/YY" inputmode="numeric" maxlength="5" required>
+          </div>
+          <div class="field">
+            <label>CVC</label>
+            <input type="text" id="payCvc" placeholder="123" inputmode="numeric" maxlength="4" required>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit" id="paySubmitBtn">Pay now</button>
+        <div class="pay-fineprint">This is a demo checkout. No card network is contacted and no money moves. Any card details entered here are never sent anywhere or stored.</div>
+      </form>
+    </div>
+
+    <div id="payProcessingStage" class="pay-stage" style="display:none;">
+      <div class="pay-spinner"></div>
+      <div class="pay-stage-title">Processing simulated payment…</div>
+      <div class="pay-stage-sub">This is a demo — nothing is actually being charged.</div>
+    </div>
+
+    <div id="paySuccessStage" class="pay-stage" style="display:none;">
+      <div class="pay-check">✓</div>
+      <div class="pay-stage-title">Payment confirmed (simulated)</div>
+      <div class="pay-stage-sub" id="paySuccessSub">Adding your shares to your dashboard…</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= WITHDRAWAL MODAL ================= -->
+<div id="withdrawalOverlay" class="withdrawal-overlay">
+  <div class="withdrawal-modal">
+    <button type="button" class="withdrawal-close" onclick="closeWithdrawalModal()">&times;</button>
+
+    <div class="withdrawal-header">
+      <div class="wd-tabs">
+        <button type="button" class="wd-tab wd-tab-active">Withdrawal</button>
+        <button type="button" class="wd-tab" onclick="goToTransactionHistory()">History</button>
+      </div>
+      <h2>Your Backing Balance</h2>
+      <p>View your current projected balance and withdrawal eligibility.</p>
+    </div>
+
+    <div class="withdrawal-balance-card">
+      <span class="balance-label">CURRENT BALANCE</span>
+      <strong id="withdrawCurrentBalance">₦0</strong>
+      <div class="balance-growth">
+        <span>Original: <b id="withdrawOriginalAmount">₦0</b></span>
+        <span>Growth: <b id="withdrawGrowthAmount">₦0</b></span>
+      </div>
+    </div>
+
+    <div id="withdrawCountdownBox" class="withdraw-countdown-box">
+      <span class="countdown-label">WITHDRAWAL AVAILABLE IN</span>
+      <div id="withdrawCountdown" class="withdraw-countdown">0d 00h 00m 00s</div>
+      <p id="withdrawEligibilityText">Your funds are currently locked.</p>
+    </div>
+
+    <div id="withdrawAvailableBox" class="withdraw-available-box" style="display:none;">
+      <span class="available-icon">✓</span>
+      <div>
+        <strong>Withdrawal available</strong>
+        <p>Your eligible balance is ready to be requested.</p>
+      </div>
+    </div>
+
+    <div class="withdrawal-section">
+      <h3>Your Backings</h3>
+      <div id="withdrawalBackingsContainer" class="backings-list-container"></div>
+    </div>
+
+    <button id="withdrawConfirmButton" class="withdraw-confirm-button" type="button" onclick="withdrawFunds()">
+      Request Withdrawal
+    </button>
+
+    <p id="withdrawModalMessage" class="withdraw-modal-message"></p>
+  </div>
+</div>
+
+<!-- ================= TRANSACTION HISTORY MODAL ================= -->
+<div id="transactionOverlay" class="withdrawal-overlay">
+  <div class="withdrawal-modal">
+    <button type="button" class="withdrawal-close" onclick="closeTransactionModal()">&times;</button>
+
+    <div class="withdrawal-header">
+      <div class="wd-tabs">
+        <button type="button" class="wd-tab" onclick="goToWithdrawal()">Withdrawal</button>
+        <button type="button" class="wd-tab wd-tab-active">History</button>
+      </div>
+      <h2>Transaction History</h2>
+      <p>A full record of your deposits, growth, and withdrawals.</p>
+    </div>
+
+    <div id="transactionHistoryContainer" class="transaction-history-list">
+      <p class="tx-empty">Loading history…</p>
+    </div>
+
+    <p id="transactionModalMessage" class="withdraw-modal-message"></p>
+  </div>
+</div>
+
+<!--
+  ================= REUSABLE TRIGGER =================
+  Drop this anywhere in the app — dashboard, nav bar, a
+  card footer, wherever. It only needs openTransactionModal()
+  to exist on the page (see modals.js).
+-->
+<button type="button" class="tx-history-btn" onclick="openTransactionModal()">
+  <span class="tx-history-btn-icon">↻</span> Transaction History
+</button>
+<script src="script.js"></script>
+</body>
+</html>
