@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cola
 Cola investments
 
@@ -28,3 +29,7 @@ if a user clicks on withdraw it should show how much has accumulated for him bas
 [6] Free tier
 
 [7]info mail
+=======
+# kelo2
+v2
+>>>>>>> 3af029b4785e98f177f546fac3081c9be0f6e142
