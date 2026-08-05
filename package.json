@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "git": "^0.1.5"
-  },
-  "script": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  }
-}
