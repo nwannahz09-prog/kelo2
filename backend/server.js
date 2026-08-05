@@ -465,6 +465,13 @@ app.get('/api/transactions', authenticate, async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Kelo backend is running 🚀"
+  });
+});
+
 app.get("/health", (req, res) => {
   res.status(200).json({
     status: "ok",

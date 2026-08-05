@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://kelo2-production.up.railway.app"
 
 const TIERS = {
   'First Sip':            { price: 5000,   shares: 50 },
