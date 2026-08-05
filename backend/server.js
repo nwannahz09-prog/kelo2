@@ -460,7 +460,10 @@ app.get('/api/transactions', authenticate, async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname,'..','frontend', 'index.html'));
+  res.json({
+    success: true,
+    message: "Kelo backend is running 🚀"
+  });
 });
 
 app.listen(PORT, () => {
