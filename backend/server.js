@@ -465,6 +465,12 @@ app.get('/', (req, res) => {
     message: "Kelo backend is running 🚀"
   });
 });
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    time: new Date().toISOString()
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Kelo Cola backend listening on http://localhost:${PORT}`);
