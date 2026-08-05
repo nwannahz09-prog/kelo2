@@ -18,8 +18,6 @@ if (!JWT_SECRET) {
   throw new Error('JWT_SECRET is not set. Copy .env.example to .env and fill it in.');
 }
 
-const cors = require("cors");
-
 app.use(cors({
   origin: [
     "http://localhost:5173", // for local development
