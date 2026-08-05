@@ -1,6 +1,3 @@
-// -----------------------------------------------------------------------
-// Point this at wherever the backend from /backend/server.js is running.
-// -----------------------------------------------------------------------
 const API_BASE = 'http://localhost:4000';
 
 const TIERS = {
