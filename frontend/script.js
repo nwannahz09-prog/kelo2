@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:4000';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const TIERS = {
   'First Sip':            { price: 5000,   shares: 50 },

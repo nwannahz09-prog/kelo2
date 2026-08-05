@@ -18,7 +18,15 @@ if (!JWT_SECRET) {
   throw new Error('JWT_SECRET is not set. Copy .env.example to .env and fill it in.');
 }
 
-app.use(cors());
+const cors = require("cors");
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173", // for local development
+    "https://your-frontend.vercel.app"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 const WITHDRAWAL_DAYS = {
@@ -459,16 +467,10 @@ app.get('/api/transactions', authenticate, async (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
-  res.json({
-    success: true,
-    message: "Kelo backend is running 🚀"
-  });
-});
 app.get("/health", (req, res) => {
   res.status(200).json({
     status: "ok",
-    time: new Date().toISOString()
+    uptime: process.uptime()
   });
 });
 
