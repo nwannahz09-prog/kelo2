@@ -23,7 +23,7 @@ app.use(cors({
     "http://localhost:4000",
     "http://localhost:5500",
     "http://localhost:3000",
-    "https://kelo2-git-main-nwannahz09-progs-projects.vercel.app"
+    "https://kelo2.vercel.app"
   ],
   credentials: true
 }));
