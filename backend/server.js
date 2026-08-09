@@ -20,9 +20,10 @@ if (!JWT_SECRET) {
 
 app.use(cors({
   origin: [
-    "http://localhost:5173", // for local development
-    "https://localhost:4000",
-    "https://kelo2-git-main-nwannahz09-progs-projects.vercel.app/"
+    "http://localhost:4000",
+    "http://localhost:5500",
+    "http://localhost:3000",
+    "https://kelo2-git-main-nwannahz09-progs-projects.vercel.app"
   ],
   credentials: true
 }));
